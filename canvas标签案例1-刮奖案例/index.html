@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas标签案例1-刮奖案例</title>
+</head>
+<body>
+    <!-- 参考文档： -->
+    <!-- https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API/Tutorial/Basic_usage -->
+    <div class="box">
+        <canvas id="canvas" width="300" height="140">很抱歉，您的浏览器不支持canvas标签，此内容无法显示。建议更换或升级浏览器。</canvas>
+    </div>
+</body>
+<script>
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+
+    /* 设置背景为开奖结果（中奖概率约为10%） */
+    var flag = Math.random();
+    if (flag > 0.7 && flag <= 0.8) {
+        console.log("恭喜中奖！");
+        canvas.style = "background: url('./1.jpg')";
+    }else{
+        console.log("谢谢惠顾！");
+        canvas.style = "background: url('./0.jpg')";
+    }
+
+    /* 绘制涂层 */
+    ctx.fillStyle = "#999";
+    ctx.fillRect(0,0,300,140);
+
+    /* 实现刮奖效果 */
+    ctx.globalCompositeOperation = "destination-out";
+    canvas.onmousedown = function (e) {
+        ctx.beginPath();
+        ctx.arc(e.offsetX, e.offsetY, 15, 0, 2 * Math.PI);
+        ctx.fill();
+        ctx.closePath();
+        canvas.onmousemove = function (eve) {
+            ctx.beginPath();
+            ctx.arc(eve.offsetX,eve.offsetY,15,0,2*Math.PI);
+            ctx.fill();
+            ctx.closePath();
+        }
+    }
+    document.onmouseup = function () {
+        canvas.onmousemove = null;
+    }
+</script>
+<style>
+    .box{
+        text-align: center;
+        padding-top: 50px;
+    }
+    #canvas{
+        border: 3px solid #333;
+    }
+</style>
+</html>
