@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas标签案例2-flappybird小游戏</title>
+</head>
+<body>
+    <canvas width="288" height="512" id="canvas"></canvas>
+</body>
+<script>
+    window.onload = function () {
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        
+        /* 图片预加载 */
+        var imgPath = {
+            'bg_day': 'images/bg_day.png',
+            'bird0_0': 'images/bird0_0.png',
+            'bird0_1': 'images/bird0_1.png',
+            'bird0_2': 'images/bird0_2.png',
+            'button_play': 'images/button_play.png',
+            'font_048': 'images/font_048.png',
+            'font_049': 'images/font_049.png',
+            'font_050': 'images/font_050.png',
+            'font_051': 'images/font_051.png',
+            'font_052': 'images/font_052.png',
+            'font_053': 'images/font_053.png',
+            'font_054': 'images/font_054.png',
+            'font_055': 'images/font_055.png',
+            'font_056': 'images/font_056.png',
+            'font_057': 'images/font_057.png',
+            'land': 'images/land.png',
+            'pipe_down': 'images/pipe_down.png',
+            'pipe_up': 'images/pipe_up.png',
+            'game_over': 'images/text_game_over.png',
+            'title': 'images/title.png',
+            'tutorial': 'images/tutorial.png'
+        };
+        var imgObj = {};
+        var imgNum = 0;
+        for (var key in imgPath) {
+            var img = new Image();
+            img.src = imgPath[key];
+            imgObj[key] = img;
+            imgObj[key].onload = function () {
+                imgNum++;
+                if (imgNum == Object.keys(imgPath).length) {
+                    startGame(imgObj);
+                }
+            }
+        }
+
+        /* 图片预加载完成，开始游戏 */
+        function startGame(imgs) {
+            /* status：游戏状态 => 0：游戏开始界面；1：游戏中；2：游戏结束界面 */
+            var status = 0;
+            /* 状态0-游戏开始界面-所需变量 */
+            var titleY = 0;     //标题起始位置的Y坐标为0
+            var globalA = 1;    //图案初始透明度为1
+            var globalSpeed = -0.1;     //图案透明度在单位时间内的变化值
+            var btnFlag = false;    //开始按钮-判断鼠标是否悬停
+            /* 状态1-游戏中-所需变量 */
+            var bgX = 0;    //背景中天空大地的X坐标
+            var pipeX = 300;    //柱子初始位置的X坐标为300
+            var pipeDownH = Math.floor(Math.random() * (220 - 40 + 1) + 40);      //上柱子的高度-取值范围为40至220
+            var pipeUpH = 400 - pipeDownH - 140;    //上下柱子之间的距离为140
+            var birdX = 100;
+            var birdY = 100;
+            var birdFly = 0;    //实现小鸟煽动翅膀效果-标识要绘制哪一只小鸟
+            var birdState = 0;      //小鸟运动状态-0表示下落；1表示上升
+            var birdSpeed = 0;      //小鸟运动加速度-下落：Math.pow(birdSpeed,2)/60；上升：Math.pow((25-birdf),2)/60
+            var birdAngle = 0;      //小鸟旋转角度
+            var score = 0;      //小鸟得分情况-穿过一次柱子得1分
+            var scoreFlag = true;   //小鸟得分的开关-穿过每根柱子只得1分
+
+            run();
+            var timer = setInterval(run, 30);
+
+            /* 运行游戏 */
+            function run() {
+                ctx.clearRect(0,0,288,512);
+                if (status == 0) {
+                    /* 状态0-游戏开始界面 */
+
+                    ctx.drawImage(imgs.bg_day,0,0);
+
+                    /* 标题降落出现 */
+                    ctx.drawImage(imgs.title,58, titleY);
+                    titleY += 5;
+                    if (titleY >= 127) {
+                        titleY = 127;
+                    }
+
+                    /* 图案闪烁显示 */
+                    ctx.save();
+                    ctx.globalAlpha = globalA;
+                    ctx.drawImage(imgs.tutorial,86,217);
+                    ctx.restore();
+                    globalA += globalSpeed;
+                    if (globalA <= 0.3 || globalA >= 1) {
+                        globalSpeed = -globalSpeed;
+                    }
+
+                    /* 开始按钮-鼠标悬停时颜色改变 */
+                    canvas.onmousemove = function (eve) {
+                        if (eve.offsetX >= 92 && eve.offsetX <= 197 && eve.offsetY >= 373 && eve.offsetY <= 432) {
+                            btnFlag = true;
+                        }else{
+                            btnFlag = false;
+                        }
+                    }
+                    if (btnFlag) {
+                        ctx.drawImage(imgs.button_play, 0, 70, 116, 70, 86, 370, 116, 70);
+                    }else{
+                        ctx.drawImage(imgs.button_play, 0, 0, 116, 70, 86, 370, 116, 70);
+                    }
+
+                    /* 开始按钮-鼠标点击时开始游戏-status变为1 */
+                    canvas.onclick = function (eve) {
+                        if (eve.offsetX >= 92 && eve.offsetX <= 197 && eve.offsetY >= 373 && eve.offsetY <= 432) {
+                            status = 1;
+                        }
+                    }
+                }else if (status == 1) {
+                    /* 状态1-游戏中 */
+
+                    /* 背景中天空和大地的移动-向左移动，速度为3 */
+                    ctx.drawImage(imgs.bg_day, bgX,0);
+                    ctx.drawImage(imgs.bg_day,0,0,-bgX,512,288+bgX,0,-bgX,512);
+                    ctx.drawImage(imgs.land, bgX,400);
+                    ctx.drawImage(imgs.land,0,0,-bgX,112,288+bgX,400,-bgX,112);
+                    bgX -= 3;
+                    if (bgX <= -288) {
+                        bgX = 0;
+                    }
+
+                    /* 绘制柱子-向左移动，速度为3 */
+                    ctx.drawImage(imgs.pipe_down,0,320-pipeDownH,52,pipeDownH,pipeX,0,52,pipeDownH);
+                    ctx.drawImage(imgs.pipe_up,0,0,52,pipeUpH,pipeX,400-pipeUpH,52,pipeUpH);
+                    pipeX -= 3;
+                    if (pipeX <= -52) {
+                        pipeX = 300;
+                        pipeDownH = Math.floor(Math.random() * (220 - 40 + 1) + 40);
+                        pipeUpH = 400 - pipeDownH - 140;
+                        scoreFlag = true;   //新的柱子，得分开关打开
+                    }
+
+                    /* 绘制小鸟-初始位置为(100,100) */
+                    ctx.save();
+                    ctx.translate(birdX+24,birdY+24);
+                    ctx.rotate(birdAngle);
+                    ctx.drawImage(imgs['bird0_'+Math.floor(birdFly)], -24, -24);
+                    ctx.restore();
+                    /* 实现小鸟煽动翅膀效果 */
+                    birdFly += 0.4;
+                    if (birdFly >= 3) {
+                        birdFly = 0;
+                    }
+                    /* 小鸟下落和上升 */
+                    if (birdState == 0) {
+                        /* 小鸟加速下落运动 */
+                        birdSpeed++;
+                        birdY += Math.pow(birdSpeed, 2) / 60;
+                        birdAngle = birdSpeed / 18;
+                        if (birdAngle > (Math.PI / 2)) {
+                            birdAngle = Math.PI / 2;
+                        }
+                    }else{
+                        /* 小鸟加速上升运动 */
+                        birdY -= Math.pow((25 - birdSpeed), 2) / 60;
+                        birdAngle = -(25 - birdSpeed) / 18;
+                        birdSpeed++;
+                        if (birdSpeed > 25) {
+                            birdState = 0;
+                            birdSpeed = 0;
+                        }
+                    }
+                    /* 鼠标点击时小鸟加速上升 */
+                    canvas.onclick = function () {
+                        birdState = 1;
+                        birdSpeed = 0;
+                    }
+                    /* 小鸟穿过了柱子-分数+1 */
+                    if (birdX > (pipeX+52) && scoreFlag) {
+                        score++;
+                        scoreFlag = false;
+                    }
+                    /* 显示分数 */
+                    var scoreStr = score.toString();
+                    for (var i = 0; i < scoreStr.length; i++) {
+                        ctx.drawImage(imgs["font_0"+scoreStr.charCodeAt(i)],30+i*24,50);
+                    }
+                    /* 判断小鸟死亡状态 */
+                    /* 触碰天花板或地面死亡 */
+                    if (birdY <= -16 || birdY >= (400-48+9)) {
+                        status = 2;
+                    }
+                    /* 触碰柱子死亡 */
+                    if (birdX >= (pipeX-48+15) && birdX <= (pipeX+52-10)) {
+                        if (birdY <= (pipeDownH-15) || birdY >= (400- pipeUpH-48+12)) {
+                            status = 2;
+                        }
+                    }
+                }else{
+                    /* 状态2-小鸟死亡，游戏结束 */
+
+                    /* 绘制背景、柱子、小鸟、分数 */
+                    ctx.drawImage(imgs.bg_day, bgX, 0);
+                    ctx.drawImage(imgs.bg_day, 0, 0, -bgX, 512, 288 + bgX, 0, -bgX, 512);
+                    ctx.drawImage(imgs.land, bgX, 400);
+                    ctx.drawImage(imgs.land, 0, 0, -bgX, 112, 288 + bgX, 400, -bgX, 112);
+                    ctx.drawImage(imgs.pipe_down, 0, 320 - pipeDownH, 52, pipeDownH, pipeX, 0, 52, pipeDownH);
+                    ctx.drawImage(imgs.pipe_up, 0, 0, 52, pipeUpH, pipeX, 400 - pipeUpH, 52, pipeUpH);
+                    var scoreStr = score.toString();
+                    for (var i = 0; i < scoreStr.length; i++) {
+                        ctx.drawImage(imgs["font_0" + scoreStr.charCodeAt(i)], 30 + i * 24, 50);
+                    }
+                    /* 小鸟死亡后落下到地面上 */
+                    ctx.drawImage(imgs.bird0_0, birdX, birdY);
+                    birdY += 5;
+                    if (birdY >= 365) {
+                        birdY = 365;
+                    }
+                    /* 绘制游戏结束后的提示 */
+                    ctx.fillStyle = "rgba(255,255,255,0.5)";
+                    ctx.fillRect(40,180,208,100);
+                    ctx.fillStyle = "#000";
+                    ctx.font = "16px 黑体";
+                    ctx.fillText("您当前一共获得了" + score + "分！",50,215);
+                    ctx.fillText("点击任意位置，继续游戏！",50,260);
+                    /* 点击任意位置，回到状态0（游戏开始界面） */
+                    canvas.onclick = function () {
+                        /* 回到状态0 */
+                        status = 0;
+                        /* 相关数值初始化 */
+                        titleY = 0;
+                        globalA = 1;
+                        globalSpeed = -0.1;
+                        btnFlag = false;
+                        bgX = 0;
+                        pipeX = 300;
+                        pipeDownH = Math.floor(Math.random() * (220 - 40 + 1) + 40);
+                        pipeUpH = 400 - pipeDownH - 140;
+                        birdX = 100;
+                        birdY = 100;
+                        birdFly = 0;
+                        birdState = 0;
+                        birdSpeed = 0;
+                        birdAngle = 0;
+                        score = 0;
+                        scoreFlag = true;
+                    }
+                }
+            }
+        }
+    }
+</script>
+<style>
+    body{
+        text-align: center;
+    }
+    #canvas{
+        border: 1px solid #666;
+    }
+</style>
+</html>
