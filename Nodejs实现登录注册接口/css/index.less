@@ -1,0 +1,101 @@
+@bg:#95afc0;
+@box-line:#192a56;
+@box-bg:#dff9fb;
+@tap:#273c75;
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: @bg;
+}
+
+#box{
+    width: 350px;
+    background-color: @box-bg;
+    border: 4px solid @box-line;
+    border-radius: 30px;
+    padding: 30px 40px;
+    margin: 50px auto;
+    .tap{
+        display: flex;
+        div{
+            flex: 1;
+            text-align: center;
+            border: 3px solid @tap;
+            border-radius: 15px 15px 0 0;
+            height: 30px;
+            line-height: 30px;
+            color: @tap;
+            background-color: @box-bg;
+            font-size: 20px;
+            cursor: pointer;
+            user-select: none;
+        }
+        .tap-selected{
+            background-color: @tap;
+            color: @box-bg;
+        }
+    }
+    .login,.reg,.update{
+        div{
+            display: flex;
+            margin-top: 20px;
+            span{
+                font-size: 20px;
+                color: @box-line;
+                width: 110px;
+                text-align-last: justify;
+                user-select: none;
+            }
+            i{
+                font-style: normal;
+                width: 20px;
+                user-select: none;
+            }
+            input{
+                flex: 1;
+                border: 1px solid @tap;
+                border-radius: 2px;
+                padding-left: 3px;
+            }
+        }
+        .btn{
+            button{
+                margin: 2px auto 0;
+                border: 2px solid @tap;
+                border-radius: 10px;
+                color: @box-bg;
+                background-color: @tap;
+                height: 40px;
+                line-height: 36px;
+                font-size: 20px;
+                padding: 0 10px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+#cont{
+    text-align: center;
+    margin-top: 50px;
+    color: @box-line;
+    font-size: 50px;
+    font-weight: bold;
+    span{
+        text-decoration: underline;
+    }
+    button{
+        border: 2px solid @tap;
+        border-radius: 10px;
+        color: @box-bg;
+        background-color: @tap;
+        font-size: 20px;
+        padding: 10px;
+        cursor: pointer;
+    }
+}
+
+.hidden{
+    display: none;
+}
