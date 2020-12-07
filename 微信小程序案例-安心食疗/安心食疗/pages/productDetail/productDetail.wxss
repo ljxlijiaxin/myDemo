@@ -1,0 +1,90 @@
+/* pages/productDetail/productDetail.wxss */
+/* 商品详情页 */
+page{
+  background-color: #f1f1f1;
+}
+
+/* 顶部banner轮播图展示商品图片 */
+.banner{
+  width: 750rpx;
+  height: 338rpx;
+}
+.banner swiper-item image{
+  width: 750rpx;
+  height: 338rpx;
+}
+
+/* 商品名称 */
+.name{
+  margin-bottom: 20rpx;
+  background-color: #fff;
+  font-size: 32rpx;
+  font-weight: bold;
+  padding: 20rpx;
+}
+
+/* 商品评价 */
+.comment{
+  background-color: #fff;
+  color: #999999;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+  font-size: 26rpx;
+}
+
+/* 商品图文详情 */
+.info{
+  background-color: #fff;
+  padding: 20rpx;
+  color: #666666;
+  font-size: 26rpx;
+  margin-bottom: 120rpx;
+}
+.info image{
+  width: 710rpx;
+  height: 710rpx;
+  margin: 20rpx 0;
+}
+.info-desc{
+  line-height: 44rpx;
+  text-align: justify;
+}
+
+/* 底部加购物车按钮栏 */
+.shopcar{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100rpx;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0 20rpx;
+  border-top: 1rpx solid #f1f1f1;
+}
+.shopcar-img{
+  width: 60rpx;
+  height: 60rpx;
+  flex: 1;
+  text-align: right;
+  margin-right: 20rpx;
+}
+.shopcar-img image{
+  width: 60rpx;
+  height: 60rpx;
+}
+.add-car{
+  padding: 12rpx 20rpx;
+  background-color: red;
+  color: #fff;
+  font-size: 30rpx;
+  border-radius: 10rpx 0 0 10rpx;
+}
+.go-buy{
+  padding: 12rpx 20rpx;
+  background-color: pink;
+  color: #fff;
+  font-size: 30rpx;
+  border-radius: 0 10rpx 10rpx 0;
+}

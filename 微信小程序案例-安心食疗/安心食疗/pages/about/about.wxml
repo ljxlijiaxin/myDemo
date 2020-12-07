@@ -1,0 +1,12 @@
+<!--pages/about/about.wxml-->
+<!-- 关于我的 -->
+
+<view class="user">
+  <view class="userinfo">
+    <image src="{{userinfo.avatarUrl||'../../images/user.png'}}"></image>
+    <view class="username">{{userinfo.nickName||'用户未登录'}}</view>
+  </view>
+  <view class="getuserinfo-btn" wx:if="{{showBtn}}">
+    <button type="primary" open-type="getUserInfo" bindgetuserinfo="getUserInfo">授权并登录</button>
+  </view>
+</view>

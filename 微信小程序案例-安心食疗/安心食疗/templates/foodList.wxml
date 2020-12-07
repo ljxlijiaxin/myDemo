@@ -1,0 +1,15 @@
+<!-- 食疗坊产品列表组件 -->
+
+<template name="foodList">
+  <view class="list-item">
+    <view class="item-img"><image src="{{pic}}"></image></view>
+    <view class="item-info">
+      <view class="list-title">{{name}}</view>
+      <view class="list-desc">{{description}}</view>
+      <view class="buy">
+        <view class="buy-price">￥{{price}}</view>
+        <view class="buy-num">{{buynum}}人付款</view>
+      </view>
+    </view>
+  </view>
+</template>

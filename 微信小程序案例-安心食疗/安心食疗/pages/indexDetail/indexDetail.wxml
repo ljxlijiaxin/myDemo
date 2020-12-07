@@ -1,0 +1,8 @@
+<!--pages/indexDetail/indexDetail.wxml-->
+<!-- 首页推荐信息列表跳转的详情页 -->
+
+<view class="title">{{data.title}}</view>
+<view class="img">
+  <image src="{{data.image}}"></image>
+</view>
+<view class="desc">{{data.detail}}</view>

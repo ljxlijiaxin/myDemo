@@ -1,0 +1,58 @@
+/* 食疗坊产品列表组件 */
+
+.list-item{
+  background-color: #ffffff;
+  margin-bottom: 20rpx;
+  padding: 20rpx;
+  display: flex;
+}
+.item-img{
+  margin-right: 20rpx;
+  width: 184rpx;
+  height: 184rpx;
+}
+.item-img image{
+  width: 184rpx;
+  height: 184rpx;
+}
+.item-info{
+  flex: 1;
+  position: relative;
+}
+.list-title{
+  color: #333333;
+  font-size: 30rpx;
+  margin-bottom: 14rpx;
+  height: 40rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+.list-desc{
+  color: #666666;
+  font-size: 28rpx;
+  height: 80rpx;
+  line-height: 40rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.buy{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  font-size: 24rpx;
+}
+.buy-price{
+  color: red;
+  margin-right: 30rpx;
+}
+.buy-num{
+  color: #666666;
+}

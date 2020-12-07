@@ -1,0 +1,104 @@
+/* pages/index/index.wxss */
+/* 首页 */
+
+/* 顶部banner轮播图 */
+.banner{
+  position: relative;
+}
+.banner swiper{
+  width: 750rpx;
+  height: 338rpx;
+}
+.banner swiper-item{
+  position: relative;
+}
+.banner swiper-item image{
+  width: 750rpx;
+  height: 338rpx;
+}
+.banner swiper-item view{
+  position: absolute;
+  bottom: 0rpx;
+  left: 0rpx;
+  right: 0rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding:0 80rpx;
+}
+.banner .banner-current{
+  position: absolute;
+  bottom: 5rpx;
+  right: 15rpx;
+  color: white;
+}
+
+/* 每日一测和每日食谱 */
+.everyday-cont{
+  display: flex;
+  margin: 34rpx 44rpx;
+  justify-content: space-between;
+}
+.everyday-cont .everyday-item image{
+  width: 306rpx;
+  height: 185rpx;
+}
+.everyday-cont .everyday-item view{
+  text-align: center;
+  font-size: 28rpx;
+  color: #676565;
+}
+
+/* 底部推荐内容列表 */
+.tj-list{
+  padding: 0 20rpx;
+}
+.tj-item{
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid #eeeeee;
+  margin-bottom: 20rpx;
+  position: relative;
+}
+.tj-title{
+  font-size: 30rpx;
+  color: #1a1a1a;
+  margin-bottom: 20rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tj-cont{
+  display: flex;
+}
+.tj-image image{
+  width: 210rpx;
+  height: 140rpx;
+}
+.tj-desc{
+  font-size: 26rpx;
+  color: #777777;
+  margin-left: 20rpx;
+  overflow: hidden;
+  height: 108rpx;
+  line-height: 36rpx;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+.read-num{
+  position: absolute;
+  bottom: 20rpx;
+  right: 20rpx;
+  color: #4d4d4d;
+  font-size: 24rpx;
+}
+.read-num text{
+  color: red;
+  margin-right: 4rpx;
+}
