@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>封装省市区三级联动js插件</title>
+</head>
+<body>
+    <div id="provincePicker">
+        <select name="select1" id="select1"></select>
+        <select name="select2" id="select2"></select>
+        <select name="select3" id="select3"></select>
+    </div>
+
+    <script src="./js/province.js"></script>
+    <script src="./js/provincePicker.js"></script>
+    <script>
+        new ProvincePicker("#select1", "#select2", "#select3");
+    </script>
+</body>
+</html>
