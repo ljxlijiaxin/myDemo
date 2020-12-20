@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>封装分页器插件</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <div id="myPagenation">
+        <div class="my-first-btn">首页</div>
+        <div class="my-prev-btn">上一页</div>
+        <div class="my-prev-more">...</div>
+        <div class="my-page"></div>
+        <div class="my-next-more">...</div>
+        <div class="my-next-btn">下一页</div>
+        <div class="my-last-btn">尾页</div>
+    </div>
+
+    <script src="./js/index.js"></script>
+    <script>
+        /* 初始化分页器 */
+        new Pagenation("#myPagenation",{
+            page:".my-page",    /* 页码部分容器的选择器 */
+            prevMore:".my-prev-more",   /* 前省略号的选择器 */
+            nextMore:".my-next-more",   /* 后省略号的选择器 */
+            currentPage:4,      /* 当前页码 */
+            totalPage:10,       /* 总页码数 */
+            showPageNum:8,      /* 显示的页码个数 */
+            first:".my-first-btn",      /* “首页”按钮的选择器，不传则不显示该按钮 */
+            last:".my-last-btn",        /* “尾页”按钮的选择器，不传则不显示该按钮 */
+            prev:".my-prev-btn",        /* “上一页”按钮的选择器，不传则不显示该按钮 */
+            next:".my-next-btn",        /* “下一页”按钮的选择器，不传则不显示该按钮 */
+            // closeToRight:true,       /* boolean，表示当显示页码个数为偶数时，当前页是否显示在中线右侧第一个，默认为false */
+            changePageFn:function(index,ele){    /* 当前页发生改变时触发的事件（不要写成箭头函数，会导致this的指向出错） */
+                console.log(this);      /* 指向分页器，如果写成箭头函数则this指向window */
+                console.log(index);     /* 当前页的页码 */
+                console.log(ele);       /* 当前页的页码元素 */
+            }
+        });
+    </script>
+</body>
+</html>
