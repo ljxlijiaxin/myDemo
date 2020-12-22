@@ -1,0 +1,57 @@
+.pagenation {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: 16px;
+}
+.pagenation p,
+.pagenation ul,
+.pagenation li {
+  margin: 0;
+  padding: 0;
+}
+.pagenation li {
+  list-style: none;
+}
+.pagenation a {
+  color: #000000;
+  text-decoration: none;
+}
+.pagenation .first,
+.pagenation .last,
+.pagenation .prev,
+.pagenation .next,
+.pagenation .page li {
+  cursor: pointer;
+  user-select: none;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 10px;
+  margin: 5px 5px;
+  color: #1a9465;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.5);
+}
+.pagenation .page ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.pagenation .page ul .current {
+  background-color: #1a9465;
+  color: #ffffff;
+}
+.pagenation .prev-more,
+.pagenation .next-more {
+  user-select: none;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 5px;
+  margin: 5px 5px;
+  font-weight: bolder;
+  color: #1a9465;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+.hidden {
+  display: none;
+}

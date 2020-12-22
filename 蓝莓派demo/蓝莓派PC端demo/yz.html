@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>蓝莓派-乐章</title>
+    <link rel="icon" href="./imgs/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./resource/Pagenation/css/index.css">
+    <link rel="stylesheet" href="./css/yz.css">
+</head>
+<body>
+    <!-- header -->
+    <div id="header">
+        <div class="wrap header-cont">
+            <ul>
+                <li>
+                    <img src="./imgs/logo.png" alt="" srcset="">
+                </li>
+                <li style="margin-right: 10px;">
+                    <img src="./imgs/header.png" alt="" srcset="">
+                </li>
+                <li>
+                    <a href="./index.html">首页</a>
+                </li>
+                <li class="header-current">
+                    <a href="#">乐章</a>
+                </li>
+                <li>
+                    <a href="#">听说</a>
+                </li>
+                <li>
+                    <a href="#">乐趣</a>
+                </li>
+                <li>
+                    <a href="#">聊聊</a>
+                </li>
+                <li>
+                    <a href="#">游记</a>
+                </li>
+                <li>
+                    <a href="#">摄影</a>
+                </li>
+                <li>
+                    <a href="#">诚品</a>
+                </li>
+                <li>
+                    <a href="#">蓝莓酱</a>
+                </li>
+                <li>
+                    <a href="#">社区</a>
+                </li>
+            </ul>
+            <div class="right">
+                <div class="search">
+                    <input type="text" name="" id="">
+                    <img src="./imgs/search-btn.png" alt="" srcset="">
+                </div>
+                <div class="login">
+                    <div class="goLogin">登录</div>
+                    <div class="goReg">注册</div>
+                </div>
+                <div class="user hidden">
+                    <div class="username" id="username">admin</div>
+                    <div class="logout">退出登录</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 顶部歌手导航条 -->
+    <div id="top-nav">
+        <div class="wrap">
+            <div class="top-nav-left">
+                <div class="left-cover">
+                    <p>全部</p>
+                    <img src="./imgs/arrow.png" alt="">
+                </div>
+                <div class="type-list">
+                    <ul>
+                        <li class="active">全部</li>
+                        <li>国语</li>
+                        <li>欧美</li>
+                        <li>粤语</li>
+                        <li>港台</li>
+                        <li>流行</li>
+                        <li>影视</li>
+                        <li>其他</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="top-nav-cont">
+                <ul class="alphabet-nav">
+                    <li>A</li>
+                    <li>B</li>
+                    <li>C</li>
+                    <li>D</li>
+                    <li>E</li>
+                    <li>F</li>
+                    <li>G</li>
+                    <li>H</li>
+                    <li>I</li>
+                    <li>J</li>
+                    <li>K</li>
+                    <li>L</li>
+                    <li>M</li>
+                    <li>N</li>
+                    <li>O</li>
+                    <li>P</li>
+                    <li>Q</li>
+                    <li>R</li>
+                    <li>S</li>
+                    <li>T</li>
+                    <li>U</li>
+                    <li>V</li>
+                    <li>W</li>
+                    <li>X</li>
+                    <li>Y</li>
+                    <li class="active">Z</li>
+                </ul>
+                <div class="singer-nav">
+                    <!-- 向左向右的箭头触发ul的移动可以通过修改li标签的margin-left属性使其逐渐减小（直至负值）来实现 -->
+                    <img src="./imgs/arrowL.png" alt="">
+                    <ul>
+                        <li class="active">周杰伦</li>
+                        <li>张杰</li>
+                        <li>周深</li>
+                        <li>周杰伦</li>
+                        <li>张杰</li>
+                        <li>周深</li>
+                        <li>周杰伦</li>
+                        <li>张杰</li>
+                        <li>周深</li>
+                        <li>周杰伦</li>
+                        <li>张杰</li>
+                        <li>周深</li>
+                        <li>周杰伦</li>
+                        <li>张杰</li>
+                        <li>周深</li>
+                        <li>周杰伦</li>
+                        <li>张杰</li>
+                        <li>周深</li>
+                    </ul>
+                    <img src="./imgs/arrowR.png" alt="">
+                </div>
+            </div>
+            <div class="top-nav-right">
+                <img src="./imgs/pencil.png" alt="">
+                <p>发布</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 瀑布流 -->
+    <div id="waterpull"></div>
+
+    <!-- 分页器 -->
+    <div id="pagenation">
+        <div class="first">首页</div>
+        <div class="prev">上一页</div>
+        <div class="prev-more">...</div>
+        <div class="page"></div>
+        <div class="next-more">...</div>
+        <div class="next">下一页</div>
+        <div class="last">尾页</div>
+    </div>
+
+    <!-- footer -->
+    <div id="footer">
+        <div class="QR-code">
+            <div class="QR-code-weibo">
+                <img src="./imgs/footer-QRCode1.jpg" alt="" srcset="">
+                <p>微博二维码</p>
+            </div>
+            <div class="QR-code-wx">
+                <img src="./imgs/footer-QRCode2.jpg" alt="" srcset="">
+                <p>微信二维码</p>
+            </div>
+        </div>
+        <hr>
+        <div class="footer-bottom">
+            <ul>
+                <li><a href="">关于我们</a></li>
+                <li><a href="">联系我们</a></li>
+                <li><a href="">加入我们</a></li>
+                <li><a href="">团队成员</a></li>
+                <li><a href="">商务合作</a></li>
+                <li><a href="">版权声明</a></li>
+            </ul>
+            <p>蓝莓派版权所有&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;京ICP证030173号</p>
+        </div>
+    </div>
+
+    <!-- 点击瀑布流中的卡片弹出模态框显示一张图片 -->
+    <div class="pic-card-bg hidden">
+        <img id="pic-card" src="" alt="">
+    </div>
+    <!-- 登录注册弹窗 -->
+    <div class="login-bg hidden">
+        <div id="login">
+            <div class="close-btn">
+                <img src="./imgs/close.png" alt="" srcset="">
+            </div>
+            <div class="tap">
+                <div class="login-tap selected-tap">登录</div>
+                <div class="reg-tap">注册</div>
+            </div>
+            <div class="login-cont">
+                <div>
+                    <span>姓名</span><i>：</i>
+                    <input type="text" id="login-name">
+                </div>
+                <div>
+                    <span>密码</span><i>：</i>
+                    <input type="password" id="login-pwd">
+                </div>
+                <div>
+                    <button class="btn">登录</button>
+                </div>
+            </div>
+            <div class="reg-cont hidden">
+                <div>
+                    <span>姓名</span><i>：</i>
+                    <input type="text" id="reg-name">
+                </div>
+                <div>
+                    <span>密码</span><i>：</i>
+                    <input type="password" id="reg-pwd">
+                </div>
+                <div>
+                    <span>确认密码</span><i>：</i>
+                    <input type="password" id="reg-confirm">
+                </div>
+                <div>
+                    <button class="btn">注册</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 自动关闭的提示弹窗 -->
+    <div id="tips" class="hidden">
+        <span>提示内容...</span>
+    </div>
+
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <script src="./js/login.js"></script>
+    <script src="./resource/Pagenation/js/index.js"></script>
+    <script src="./mock/yz-waterpull.js"></script>
+
+    <!-- 初始化分页器 -->
+    <script>
+        var data = yzWaterpullData;     /* 所有数据 */
+        var num = 12;                   /* 每一页显示12条数据 */
+        var totalPage = Math.ceil(data.length / num);   /* 总页数 */
+
+        new Pagenation("#pagenation",{
+            totalPage: totalPage,
+            showPageNum:5,
+            page:".page",
+            prevMore:".prev-more",
+            nextMore:".next-more",
+            first:".first",
+            last:".last",
+            prev:".prev",
+            next:".next",
+            changePageFn:function (index,ele) {
+                var rowsNum = 4;    /* 瀑布流布局共几列 */
+                var ulList = [];    /* 存放瀑布流每一列的ul元素 */
+                var currentData = yzWaterpullData.slice((index-1)*num,index*num);     /* 当前页显示的数据 */
+                var waterpull = document.querySelector("#waterpull");   /* 瀑布流最外层容器元素 */
+                
+                waterpull.innerHTML = "";       /* 清空瀑布流中原有内容 */
+                
+                for (let i = 0; i < rowsNum; i++) {
+                    var ul = document.createElement("ul");
+                    ul.classList.add(`row${i}`);
+                    ulList.push(ul);
+                    waterpull.appendChild(ul);
+                }
+
+                for (let j = 0; j < currentData.length; j++) {
+                    /* 判断当前瀑布流中高度最小的ul元素 */
+                    var minIndex = 0;
+                    var minH = ulList[0].offsetHeight;
+                    for (let k = 1; k < ulList.length; k++) {
+                        if (ulList[k].offsetHeight < minH) {
+                            minIndex = k;
+                            minH = ulList[k].offsetHeight;
+                        }
+                    }
+
+                    /* 创建li标签 */
+                    var li = document.createElement("li");
+                    var top = document.createElement("div");
+                    var pic = document.createElement("img");
+                    var text = document.createElement("div");
+                    var bottom = document.createElement("div");
+                    /* top */
+                    top.classList.add("top");
+                    var logo = document.createElement("div");
+                    var logoImg = document.createElement("img");
+                    logo.classList.add("logo");
+                    logoImg.src = currentData[j].logo;
+                    logo.appendChild(logoImg);
+                    var topCenter = document.createElement("div");
+                    var title = document.createElement("p");
+                    var author = document.createElement("p");
+                    topCenter.classList.add("topCenter");
+                    title.classList.add("title");
+                    author.classList.add("author");
+                    title.innerHTML = currentData[j].title;
+                    author.innerHTML = currentData[j].author;
+                    topCenter.appendChild(title);
+                    topCenter.appendChild(author);
+                    var tag = document.createElement("div");
+                    tag.classList.add("tag");
+                    tag.innerHTML = currentData[j].tag;
+                    top.appendChild(logo);
+                    top.appendChild(topCenter);
+                    top.appendChild(tag);
+                    li.appendChild(top);
+                    /* pic */
+                    pic.classList.add("pic");
+                    pic.src = currentData[j].picture;
+                    li.appendChild(pic);
+                    /* text */
+                    text.classList.add("text");
+                    text.innerHTML = currentData[j].text;
+                    li.appendChild(text);
+                    /* bottom */
+                    bottom.classList.add("bottom");
+                    var zan = document.createElement("span");
+                    var comment = document.createElement("span");
+                    zan.classList.add("zan");
+                    comment.classList.add("comment");
+                    zan.innerHTML = currentData[j].zan;
+                    comment.innerHTML = currentData[j].comments;
+                    bottom.appendChild(zan);
+                    bottom.appendChild(comment);
+                    li.appendChild(bottom);
+                    /* 给li标签加点击事件 */
+                    li.addEventListener("click",function (){
+                        /* 弹出模态框，显示图片 */
+                        var picCard = document.querySelector(".pic-card-bg");
+                        var picImg = document.querySelector("#pic-card");
+                        picImg.src = currentData[j].picture;
+                        picCard.classList.remove("hidden");
+                        picCard.addEventListener("click",function (e) {
+                            if (e.target.className == "pic-card-bg") {
+                                picCard.classList.add("hidden");
+                            }
+                        })
+                    });
+
+                    /* 将创建好的li标签添加到高度最小的ul元素中 */
+                    ulList[minIndex].appendChild(li);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+body,
+p {
+  margin: 0;
+  padding: 0;
+}
+ul,
+ol,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: #000000;
+}
+img {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+input {
+  margin: 0;
+  padding: 0;
+}
+.wrap {
+  width: 900px;
+  margin: 0 auto;
+}
