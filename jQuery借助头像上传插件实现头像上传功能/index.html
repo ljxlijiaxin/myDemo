@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery借助头像上传插件实现头像上传功能</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <div id="logo">
+        <div class="user-logo"></div>
+        <button>上传头像</button>
+    </div>
+    <div id="upload-modal">
+        <div class="upload-box">
+            <div class="upload-header">
+                <span>请选择图片</span><i>X</i>
+            </div>
+            <div class="upload-body">
+                <span>图片上传</span>
+                <input type="file" id="file">
+                <label for="file">选择图片</label>
+                <div class="upload-cont">
+                    <div id="clipArea"></div>
+                    <div class="show-logo">
+                        <div class="logo-img"></div>
+                        <button class="clip-btn">确认裁剪</button>
+                    </div>
+                </div>
+            </div>
+            <div class="upload-footer">
+                <button class="finished">保存修改</button>
+                <button class="cancel">取消选择</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+    <script src="./js/iscroll-zoom.js"></script>
+    <script src="./js/hammer.js"></script>
+    <script src="./js/lrz.all.bundle.js"></script>
+    <script src="./js/jquery.photoClip.min.js"></script>
+    <script>
+        ;(()=>{
+            var logoUrlData = "";
+
+            /* “上传头像”按钮 */
+            $("#logo button").click(() => {
+                $("#upload-modal").fadeIn();
+            });
+            /* 关闭模态框按钮 */
+            $(".upload-header i").click(() => {
+                $("#upload-modal").fadeOut();
+            });
+            /* 模态框底部“保存修改”按钮 */
+            $(".finished").click(() => {
+                $(".user-logo").css("background",`url(${logoUrlData})`);
+                $(".user-logo").css("background-size","120px 120px");
+
+                $("#upload-modal").fadeOut();
+            });
+            /* 模态框底部“取消选择”按钮 */
+            $(".cancel").click(() => {
+                $("#upload-modal").fadeOut();
+            });
+
+            var clipArea = new bjj.PhotoClip("#clipArea", {
+                size: [240, 240], // 截取框的宽和高组成的数组。默认值为[260,260]
+                outputSize: [300, 300], // 输出图像的宽和高组成的数组。默认值为[0,0]，表示输出图像原始大小
+                // outputType: "png", // 指定输出图片的类型，可选 "jpg" 和 "png" 两种种类型，默认为 "jpg"
+                file: "#file", // 上传图片的<input type="file">控件的选择器或者DOM对象
+                view: ".logo-img", // 显示截取后图像的容器的选择器或者DOM对象
+                ok: ".clip-btn", // 确认截图按钮的选择器或者DOM对象
+                loadStart: function (fileObj) {
+                    // 开始加载的回调函数。this指向 fileReader 对象，并将正在加载的 file 对象作为参数传入
+                    $('.cover-wrap').fadeIn();
+                    console.log("照片读取中");
+                    console.log(fileObj);
+                },
+                loadComplete: function (url) {
+                    // 加载完成的回调函数。this指向图片对象，并将图片地址作为参数传入
+                    console.log("照片读取完成");
+                    console.log("this:",this);
+                    console.log("url:",url);
+                },
+                //loadError: function(event) {}, // 加载失败的回调函数。this指向 fileReader 对象，并将错误事件的 event 对象作为参数传入
+                clipFinish: function (dataURL) {
+                    // 裁剪完成的回调函数。this指向图片对象，会将裁剪出的图像数据DataURL作为参数传入
+                    console.log(dataURL);
+                    logoUrlData = dataURL;
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
