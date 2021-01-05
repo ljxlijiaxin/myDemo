@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>请选择城市</title>
+	<link rel="icon" type="icon" href="images/title.ico">
+	<link rel="stylesheet" type="text/css" href="iconfont/iconfont.css">
+	<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+	<style type="text/css">
+		body,div,p,span,i{
+			margin: 0px;
+			padding: 0px;
+		}
+
+		body{
+			background-color: #f5f5f5;
+			padding: 5px;
+		}
+		.go-back-btn{
+			border: 5px solid #d6e0e4;
+			padding: 5px;
+			text-align: center;
+			color: #546067;
+			background-color: #f5f5f5;
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+		}
+		.city-box{
+			border: 1px solid #b1c3ca;
+			border-radius: 5px;
+			padding: 5px;
+			margin-top: 45px;
+		}
+		.city-box>p{
+			margin: 2px;
+			padding: 3px 10px;
+			border: 1px solid #d6e0e4;
+			color: #546067;
+			font-size: 16px;
+			border-radius: 3px;
+			cursor: pointer;
+		}
+		.city-box>p>span{
+			margin-left: 5px;
+			color: #9a9db3;
+		}
+		.city-box>p>i{
+			font-size: 12px;
+			margin-left: 10px;
+			display: inline-block;
+			width: 16px;
+			height: 16px;
+			text-align: center;
+			line-height: 16px;
+			transition: .2s ease;
+		}
+		.city-box>p .open{
+			transform: rotate(90deg);
+		}
+		.city-box .city-hidden{
+			display: none;
+		}
+		.city-box .city-hidden p{
+			border-radius: 3px;
+			cursor: pointer;
+			font-size: 16px;
+			color: #6a7d88;
+			padding: 3px 12px;
+			margin: 2px;
+			background-color: #e9ebf3;
+		}
+	</style>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".go-back-btn").on("click",function () {
+				window.history.back();
+			})
+			$(".city-box>p").on("click",function(){
+				var open = $(this).children("i");
+				var hidden = $(this).next();
+				open.toggleClass("open");
+				hidden.toggle("fast");
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="go-back-btn">返&nbsp;&nbsp;&nbsp;回</div>
+
+	<!-- 中国城市行政区划列表。
+		原本应该用select和option标签，方便进行选择和提交，这里用了p标签，仅作为样式参考，并不具备选择城市功能。 -->
+
+	<div class="city-box">
+		<p>北京市&nbsp;<span>京</span><i class="iconfont">&#xe6cc;</i></p>
+		<div class="city-hidden">
+			<p>朝阳区</p>
+			<p>海淀区</p>
+			<p>通州区</p>
+			<p>房山区</p>
+			<p>丰台区</p>
+			<p>昌平区</p>
+			<p>大兴区</p>
+			<p>顺义区</p>
+			<p>西城区</p>
+			<p>延庆县</p>
+			<p>石景山区</p>
+			<p>宣武区</p>
+			<p>怀柔区</p>
+			<p>崇文区</p>
+			<p>密云县</p>
+			<p>东城区</p>
+			<p>门头沟区</p>
+			<p>平谷区</p>
+		</div>
+		<p>天津&nbsp;<span>津</span><i class="iconfont">&#xe6cc;</i></p>
+		<div class="city-hidden">
+			<p>和平区</p>
+			<p>北辰区</p>
+			<p>河北区</p>
+			<p>河西区</p>
+			<p>西青区</p>
+			<p>津南区</p>
+			<p>东丽区</p>
+			<p>武清区</p>
+			<p>宝坻区</p>
+			<p>红桥区</p>
+			<p>大港区</p>
+			<p>汉沽区</p>
+			<p>静海县</p>
+			<p>宁河县</p>
+			<p>塘沽区</p>
+			<p>蓟县</p>
+			<p>南开区</p>
+			<p>河东区</p>
+		</div>
+		<p>河北&nbsp;<span>冀</span><i class="iconfont">&#xe6cc;</i></p>
+		<div class="city-hidden">
+			<p>石家庄市</p>
+			<p>唐山市</p>
+			<p>保定市</p>
+			<p>邯郸市</p>
+			<p>邢台市</p>
+			<p>河北区</p>
+			<p>沧州市</p>
+			<p>秦皇岛市</p>
+			<p>张家口市</p>
+			<p>衡水市</p>
+			<p>廊坊市</p>
+			<p>承德市</p>
+		</div>
+		<p>山西&nbsp;<span>晋</span><i class="iconfont">&#xe6cc;</i></p>
+		<div class="city-hidden">
+			<p>太原市</p>
+			<p>大同市</p>
+			<p>运城市</p>
+			<p>长治市</p>
+			<p>晋城市</p>
+			<p>忻州市</p>
+			<p>临汾市</p>
+			<p>吕梁市</p>
+			<p>晋中市</p>
+			<p>阳泉市</p>
+			<p>朔州市</p>
+		</div>
+		<p>内蒙古自治区&nbsp;<span>蒙</span><i class="iconfont">&#xe6cc;</i></p>
+		<div class="city-hidden">
+			<p>赤峰市</p>
+			<p>包头市</p>
+			<p>通辽市</p>
+			<p>呼和浩特市</p>
+			<p>乌海市</p>
+			<p>鄂尔多斯市</p>
+			<p>呼伦贝尔市</p>
+			<p>兴安盟</p>
+			<p>巴彦淖尔盟</p>
+			<p>乌兰察布盟</p>
+			<p>锡林郭勒盟</p>
+			<p>阿拉善盟</p>
+		</div>
+		<p>辽宁&nbsp;<span>辽</span><i class="iconfont">&#xe6cc;</i></p>
+		<div class="city-hidden">
+			<p>大连市</p>
+			<p>沈阳市</p>
+			<p>丹东市</p>
+			<p>辽阳市</p>
+			<p>葫芦岛市</p>
+			<p>锦州市</p>
+			<p>朝阳市</p>
+			<p>营口市</p>
+			<p>鞍山市</p>
+			<p>抚顺市</p>
+			<p>阜新市</p>
+			<p>本溪市</p>
+			<p>盘锦市</p>
+			<p>铁岭市</p>
+		</div>
+		<p>吉林&nbsp;<span>吉</span><i class="iconfont">&#xe6cc;</i></p>
+		<div class="city-hidden">
+			<p>吉林市</p>
+			<p>长春市</p>
+			<p>白山市</p>
+			<p>白城市</p>
+			<p>延边州</p>
+			<p>松原市</p>
+			<p>辽源市</p>
+			<p>通化市</p>
+			<p>四平市</p>
+		</div>
+		<p>黑龙江&nbsp;<span>黑</span><i class="iconfont">&#xe6cc;</i></p>
+		<div class="city-hidden">
+			<p>齐齐哈尔市</p>
+			<p>哈尔滨市</p>
+			<p>大庆市</p>
+			<p>佳木斯市</p>
+			<p>双鸭山市</p>
+			<p>牡丹江市</p>
+			<p>鸡西市</p>
+			<p>黑河市</p>
+			<p>绥化市</p>
+			<p>鹤岗市</p>
+			<p>伊春市</p>
+			<p>大兴安岭地区</p>
+			<p>七台河市</p>
+		</div>
+		<p>上海市&nbsp;<span>沪</span><i class="iconfont">&#xe6cc;</i></p>
+		<div class="city-hidden">
+			<p>松江区</p>
+			<p>宝山区</p>
+			<p>金山区</p>
+			<p>嘉定区</p>
+			<p>南汇区</p>
+			<p>青浦区</p>
+			<p>浦东新区</p>
+			<p>奉贤区</p>
+			<p>闵行区</p>
+			<p>徐汇区</p>
+			<p>静安区</p>
+			<p>黄浦区</p>
+			<p>普陀区</p>
+			<p>杨浦区</p>
+			<p>虹口区</p>
+			<p>闸北区</p>
+			<p>长宁区</p>
+			<p>崇明县</p>
+			<p>卢湾区</p>
+		</div>
+		<p>江苏&nbsp;<span>苏</span><i class="iconfont">&#xe6cc;</i></p>
+		<div class="city-hidden">
+			<p>苏州市</p>
+			<p>徐州市</p>
+			<p>盐城市</p>
+			<p>无锡市</p>
+			<p>南京市</p>
+			<p>南通市</p>
+			<p>连云港市</p>
+			<p>常州市</p>
+			<p>扬州市</p>
+			<p>镇江市</p>
+			<p>淮安市</p>
+			<p>泰州市</p>
+			<p>宿迁市</p>
+		</div>
+		<p>浙江&nbsp;<span>浙</span><i class="iconfont">&#xe6cc;</i></p>
+		<div class="city-hidden">
+			<p>杭州市</p>
+			<p>温州市</p>
+			<p>宁波市</p>
+			<p>台州市</p>
+			<p>嘉兴市</p>
+			<p>金华市</p>
+			<p>湖州市</p>
+			<p>绍兴市</p>
+			<p>舟山市</p>
+			<p>丽水市</p>
+			<p>衢州市</p>
+		</div>
+		<p>安徽&nbsp;<span>皖</span><i class="iconfont">&#xe6cc;</i></p>
+		<div class="city-hidden">
+			<p>合肥市</p>
+			<p>芜湖市</p>
+			<p>六安市</p>
+			<p>宿州市</p>
+			<p>阜阳市</p>
+			<p>安庆市</p>
+			<p>马鞍山市</p>
+			<p>蚌埠市</p>
+			<p>淮北市</p>
+			<p>淮南市</p>
+			<p>宣城市</p>
+			<p>黄山市</p>
+			<p>铜陵市</p>
+			<p>亳州市</p>
+			<p>池州市</p>
+			<p>巢湖市</p>
+			<p>滁州市</p>
+		</div>
+		<p>福建&nbsp;<span>闽</span><i class="iconfont">&#xe6cc;</i></p>
+		<div class="city-hidden">
+			<p>漳州市</p>
+			<p>泉州市</p>
+			<p>厦门市</p>
+			<p>福州市</p>
+			<p>莆田市</p>
+			<p>宁德市</p>
+			<p>三明市</p>
+			<p>南平市</p>
+			<p>龙岩市</p>
+		</div>
+		<p>江西&nbsp;<span>赣</span><i class="iconfont">&#xe6cc;</i></p>
+		<div class="city-hidden">
+			<p>南昌市</p>
+			<p>赣州市</p>
+			<p>上饶市</p>
+			<p>吉安市</p>
+			<p>九江市</p>
+			<p>新余市</p>
+			<p>抚州市</p>
+			<p>宜春市</p>
+			<p>景德镇市</p>
+			<p>萍乡市</p>
+			<p>鹰潭市</p>
+		</div>
+		<p>山东&nbsp;<span>鲁</span><i class="iconfont">&#xe6cc;</i></p>
+		<div class="city-hidden">
+			<p>济南市</p>
+			<p>青岛市</p>
+			<p>临沂市</p>
+			<p>济宁市</p>
+			<p>菏泽市</p>
+			<p>烟台市</p>
+			<p>泰安市</p>
+			<p>淄博市</p>
+			<p>潍坊市</p>
+			<p>日照市</p>
+			<p>威海市</p>
+			<p>滨州市</p>
+			<p>东营市</p>
+			<p>聊城市</p>
+			<p>德州市</p>
+			<p>莱芜市</p>
+			<p>枣庄市</p>
+		</div>
+		<p>河南&nbsp;<span>豫</span><i class="iconfont">&#xe6cc;</i></p>
+		<div class="city-hidden">
+			<p>郑州市</p>
+			<p>南阳市</p>
+			<p>新乡市</p>
+			<p>安阳市</p>
+			<p>洛阳市</p>
+			<p>信阳市</p>
+			<p>平顶山市</p>
+			<p>周口市</p>
+			<p>商丘市</p>
+			<p>开封市</p>
+			<p>焦作市</p>
+			<p>驻马店市</p>
+			<p>濮阳市</p>
+			<p>三门峡市</p>
+			<p>漯河市</p>
+			<p>许昌市</p>
+			<p>鹤壁市</p>
+			<p>济源市</p>
+		</div>
+		<p>湖北&nbsp;<span>鄂</span><i class="iconfont">&#xe6cc;</i></p>
+		<div class="city-hidden">
+			<p>武汉市</p>
+			<p>宜昌市</p>
+			<p>襄樊市</p>
+			<p>荆州市</p>
+			<p>恩施州</p>
+			<p>孝感市</p>
+			<p>黄冈市</p>
+			<p>十堰市</p>
+			<p>咸宁市</p>
+			<p>黄石市</p>
+			<p>仙桃市</p>
+			<p>随州市</p>
+			<p>天门市</p>
+			<p>荆门市</p>
+			<p>潜江市</p>
+			<p>鄂州市</p>
+			<p>神农架林区</p>
+		</div>
+		<p>湖南&nbsp;<span>湘</span><i class="iconfont">&#xe6cc;</i></p>
+		<div class="city-hidden">
+			<p>长沙市</p>
+			<p>邵阳市</p>
+			<p>常德市</p>
+			<p>衡阳市</p>
+			<p>株洲市</p>
+			<p>湘潭市</p>
+			<p>永州市</p>
+			<p>岳阳市</p>
+			<p>怀化市</p>
+			<p>郴州市</p>
+			<p>娄底市</p>
+			<p>益阳市</p>
+			<p>张家界市</p>
+			<p>湘西州</p>
+		</div>
+		<p>广东&nbsp;<span>粤</span><i class="iconfont">&#xe6cc;</i></p>
+		<div class="city-hidden">
+			<p>广州市</p>
+			<p>深圳市</p>
+			<p>东莞市</p>
+			<p>中山市</p>
+			<p>惠州市</p>
+			<p>江门市</p>
+			<p>珠海市</p>
+			<p>汕头市</p>
+			<p>佛山市</p>
+			<p>湛江市</p>
+			<p>河源市</p>
+			<p>肇庆市</p>
+			<p>潮州市</p>
+			<p>清远市</p>
+			<p>韶关市</p>
+			<p>揭阳市</p>
+			<p>阳江市</p>
+			<p>云浮市</p>
+			<p>茂名市</p>
+			<p>梅州市</p>
+			<p>汕尾市</p>
+		</div>
+		<p>广西壮族自治区&nbsp;<span>桂</span><i class="iconfont">&#xe6cc;</i></p>
+		<div class="city-hidden">
+			<p>贵港市</p>
+			<p>玉林市</p>
+			<p>北海市</p>
+			<p>南宁市</p>
+			<p>柳州市</p>
+			<p>桂林市</p>
+			<p>梧州市</p>
+			<p>钦州市</p>
+			<p>来宾市</p>
+			<p>河池市</p>
+			<p>百色市</p>
+			<p>贺州市</p>
+			<p>崇左市</p>
+			<p>防城港市</p>
+		</div>
+		<p>海南&nbsp;<span>琼</span><i class="iconfont">&#xe6cc;</i></p>
+		<div class="city-hidden">
+			<p>三亚市</p>
+			<p>海口市</p>
+			<p>琼海市</p>
+			<p>文昌市</p>
+			<p>东方市</p>
+			<p>昌江县</p>
+			<p>陵水县</p>
+			<p>乐东县</p>
+			<p>五指山市</p>
+			<p>保亭县</p>
+			<p>澄迈县</p>
+			<p>万宁市</p>
+			<p>儋州市</p>
+			<p>临高县</p>
+			<p>白沙县</p>
+			<p>定安县</p>
+			<p>琼中县</p>
+			<p>屯昌县</p>
+		</div>
+		<p>重庆&nbsp;<span>渝</span><i class="iconfont">&#xe6cc;</i></p>
+		<div class="city-hidden">
+			<p>江北区</p>
+			<p>渝北区</p>
+			<p>沙坪坝区</p>
+			<p>九龙坡区</p>
+			<p>万州区</p>
+			<p>永川市</p>
+			<p>南岸区</p>
+			<p>酉阳县</p>
+			<p>北碚区</p>
+			<p>涪陵区</p>
+			<p>秀山县</p>
+			<p>巴南区</p>
+			<p>渝中区</p>
+			<p>石柱县</p>
+			<p>忠县</p>
+			<p>合川市</p>
+			<p>大渡口区</p>
+			<p>开县</p>
+			<p>长寿区</p>
+			<p>荣昌县</p>
+			<p>云阳县</p>
+			<p>梁平县</p>
+			<p>潼南县</p>
+			<p>江津市</p>
+			<p>彭水县</p>
+			<p>璧山县</p>
+			<p>綦江县</p>
+			<p>大足县</p>
+			<p>黔江区</p>
+			<p>巫溪县</p>
+			<p>巫山县</p>
+			<p>垫江县</p>
+			<p>丰都县</p>
+			<p>武隆县</p>
+			<p>万盛区</p>
+			<p>铜梁县</p>
+			<p>南川市</p>
+			<p>奉节县</p>
+			<p>双桥区</p>
+			<p>城口县</p>
+		</div>
+		<p>四川&nbsp;<span>川</span><i class="iconfont">&#xe6cc;</i></p>
+		<div class="city-hidden">
+			<p>成都市</p>
+			<p>绵阳市</p>
+			<p>广元市</p>
+			<p>达州市</p>
+			<p>南充市</p>
+			<p>德阳市</p>
+			<p>广安市</p>
+			<p>阿坝州</p>
+			<p>巴中市</p>
+			<p>遂宁市</p>
+			<p>内江市</p>
+			<p>凉山州</p>
+			<p>攀枝花市</p>
+			<p>乐山市</p>
+			<p>自贡市</p>
+			<p>泸州市</p>
+			<p>雅安市</p>
+			<p>宜宾市</p>
+			<p>资阳市</p>
+			<p>眉山市</p>
+			<p>甘孜州</p>
+		</div>
+		<p>贵州&nbsp;<span>黔</span><i class="iconfont">&#xe6cc;</i></p>
+		<div class="city-hidden">
+			<p>贵阳市</p>
+			<p>黔东南州</p>
+			<p>黔南州</p>
+			<p>遵义市</p>
+			<p>黔西南州</p>
+			<p>毕节地区</p>
+			<p>铜仁地区</p>
+			<p>安顺市</p>
+			<p>六盘水市</p>
+		</div>
+		<p>云南&nbsp;<span>滇</span><i class="iconfont">&#xe6cc;</i></p>
+		<div class="city-hidden">
+			<p>昆明市</p>
+			<p>红河州</p>
+			<p>大理州</p>
+			<p>文山州</p>
+			<p>德宏州</p>
+			<p>曲靖市</p>
+			<p>昭通市</p>
+			<p>楚雄州</p>
+			<p>保山市</p>
+			<p>玉溪市</p>
+			<p>丽江地区</p>
+			<p>临沧地区</p>
+			<p>思茅地区</p>
+			<p>西双版纳州</p>
+			<p>怒江州</p>
+			<p>迪庆州</p>
+		</div>
+		<p>西藏自治区&nbsp;<span>藏</span><i class="iconfont">&#xe6cc;</i></p>
+		<div class="city-hidden">
+			<p>拉萨市</p>
+			<p>山南地区</p>
+			<p>林芝地区</p>
+			<p>日喀则地区</p>
+			<p>阿里地区</p>
+			<p>昌都地区</p>
+			<p>那曲地区</p>
+		</div>
+		<p>陕西&nbsp;<span>陕</span><i class="iconfont">&#xe6cc;</i></p>
+		<div class="city-hidden">
+			<p>西安市</p>
+			<p>咸阳市</p>
+			<p>宝鸡市</p>
+			<p>汉中市</p>
+			<p>渭南市</p>
+			<p>安康市</p>
+			<p>榆林市</p>
+			<p>商洛市</p>
+			<p>延安市</p>
+			<p>铜川市</p>
+		</div>
+		<p>甘肃&nbsp;<span>甘</span><i class="iconfont">&#xe6cc;</i></p>
+		<div class="city-hidden">
+			<p>兰州市</p>
+			<p>天水市</p>
+			<p>庆阳市</p>
+			<p>武威市</p>
+			<p>酒泉市</p>
+			<p>张掖市</p>
+			<p>陇南地区</p>
+			<p>白银市</p>
+			<p>定西地区</p>
+			<p>平凉市</p>
+			<p>嘉峪关市</p>
+			<p>临夏回族自治州</p>
+			<p>金昌市</p>
+			<p>甘南州</p>
+		</div>
+		<p>青海&nbsp;<span>青</span><i class="iconfont">&#xe6cc;</i></p>
+		<div class="city-hidden">
+			<p>西宁市</p>
+			<p>海西州</p>
+			<p>海东地区</p>
+			<p>海北州</p>
+			<p>果洛州</p>
+			<p>玉树州</p>
+			<p>黄南藏族自治州</p>
+		</div>
+		<p>宁夏回族自治区&nbsp;<span>宁</span><i class="iconfont">&#xe6cc;</i></p>
+		<div class="city-hidden">
+			<p>银川市</p>
+			<p>吴忠市</p>
+			<p>中卫市</p>
+			<p>石嘴山市</p>
+			<p>固原市</p>
+		</div>
+		<p>新疆维吾尔自治区&nbsp;<span>新</span><i class="iconfont">&#xe6cc;</i></p>
+		<div class="city-hidden">
+			<p>乌鲁木齐市</p>
+			<p>伊犁州</p>
+			<p>昌吉州</p>
+			<p>石河子市</p>
+			<p>哈密地区</p>
+			<p>阿克苏地区</p>
+			<p>巴音郭楞州</p>
+			<p>喀什地区</p>
+			<p>塔城地区</p>
+			<p>克拉玛依市</p>
+			<p>和田地区</p>
+			<p>阿勒泰州</p>
+			<p>吐鲁番地区</p>
+			<p>阿拉尔市</p>
+			<p>博尔塔拉州</p>
+			<p>五家渠市</p>
+			<p>克孜勒苏州</p>
+			<p>图木舒克市</p>
+		</div>
+		<p>台湾&nbsp;<span>台</span><i class="iconfont">&#xe6cc;</i></p>
+		<div class="city-hidden">
+			<p>台北市</p>
+			<p>高雄市</p>
+			<p>台中市</p>
+			<p>新竹市</p>
+			<p>基隆市</p>
+			<p>台南市</p>
+			<p>嘉义市</p>
+		</div>
+		<p>香港特别行政区&nbsp;<span>港</span><i class="iconfont">&#xe6cc;</i></p>
+		<div class="city-hidden">
+			<p>中西区</p>
+			<p>湾仔区</p>
+			<p>东区</p>
+			<p>南区</p>
+			<p>油尖旺区</p>
+			<p>深水埗区</p>
+			<p>九龙城区</p>
+			<p>黄大仙区</p>
+			<p>观塘区</p>
+			<p>北区</p>
+			<p>大埔区</p>
+			<p>沙田区</p>
+			<p>西贡区</p>
+			<p>荃湾区</p>
+			<p>屯门区</p>
+			<p>元朗区</p>
+			<p>葵青区</p>
+			<p>离岛区</p>
+		</div>
+		<p>澳门特别行政区&nbsp;<span>澳</span><i class="iconfont">&#xe6cc;</i></p>
+		<div class="city-hidden">
+			<p>花地玛堂区</p>
+			<p>圣安多尼堂区</p>
+			<p>大堂区</p>
+			<p>望德堂区</p>
+			<p>风顺堂区</p>
+			<p>嘉模堂区</p>
+			<p>圣方济各堂区</p>
+			<p>路氹城</p>
+		</div>
+	</div>
+</body>
+</html>
