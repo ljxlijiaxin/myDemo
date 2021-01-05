@@ -1,0 +1,455 @@
+/* header */
+#header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 64px;
+    transition: all .3s;
+    z-index: 9999;
+    &:hover{
+        background-color: rgba(0, 0, 0, .8);
+    }
+    .header-logo{
+        margin-top: 13px;
+        display: inline-block;
+        img{
+            height: 38px;
+        }
+    }
+    .wrap>ul{
+        float: right;
+        display: flex;
+        &>li{
+            margin-left: 30px;
+            height: 64px;
+            position: relative;
+            &::after{
+                content: "";
+                display: block;
+                font-size: 0;
+                background-color: #ffffff;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                height: 2px;
+                width: 0;
+                transition: all .4s ease;
+            }
+            &>a{
+                display: inline-block;
+                height: 64px;
+                line-height: 64px;
+                color: #ffffff;
+                font-size: 14px;
+                padding: 0 10px;
+            }
+            .more-nav{
+                position: absolute;
+                top: 64px;
+                left: 50%;
+                margin-left: -50px;
+                opacity: 0;
+                height: 0;
+                overflow: hidden;
+                transition: all .2s ease-out;
+                ul{
+                    li{
+                        a{
+                            color: #cccccc;
+                            font-size: 14px;
+                            display: block;
+                            width: 100px;
+                            height: 40px;
+                            line-height: 40px;
+                            background-color: rgba(0, 0, 0, .8);
+                            text-align: center;
+                            border-bottom: 1px solid rgba(255, 255, 255, .2);
+                            &:hover{
+                                color: #0f97ff;
+                            }
+                        }
+                    }
+                    li:last-child{
+                        a{
+                            border-bottom: none;
+                            border-bottom-left-radius: 10px;
+                            border-bottom-right-radius: 10px;
+                        }
+                    }
+                }
+            }
+            &:hover{
+                .more-nav{
+                    opacity: 1;
+                }
+                .qkl{
+                    height: 122px;
+                }
+                .about{
+                    height: 286px;
+                }
+            }
+        }
+        .current,li:hover{
+            &::after{
+                width: 100%;
+                left: 0;
+            }
+        }
+    }
+}
+.header-hover{
+    background-color: rgba(0, 0, 0, .8);
+}
+
+/* 首页顶部视频播放 */
+#video{
+    position: relative;
+    width: 100%;
+    height: 610px;
+    overflow: hidden;
+    video{
+        width: 100%;
+    }
+    .video-cont{
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        color: #ffffff;
+        width: 750px;
+        height: 258px;
+        text-align: center;
+        .video-cont-title{
+            font-size: 100px;
+            user-select: none;
+            i{
+                font-size: 80px;
+                font-style: normal;
+                margin: 0 15px;
+            }
+        }
+        .video-cont-btn{
+            a{
+                display: block;
+                font-size: 16px;
+                width: 180px;
+                height: 50px;
+                line-height: 50px;
+                border: 1px solid #ffffff;
+                color: #ffffff;
+                margin: 20px auto;
+                &:hover{
+                    background-color: rgba(255, 255, 255, .3);
+                }
+            }
+        }
+        .video-cont-godown{
+            -webkit-animation: goDownGif .5s infinite alternate;
+            -moz-animation: goDownGif .5s infinite alternate;
+            -o-animation: goDownGif .5s infinite alternate;
+            animation: goDownGif .5s infinite alternate;
+            .iconfont{
+                font-size: 46px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+/* 共享计算与区块链 */
+#gxjs{
+    background-image: linear-gradient(to bottom,rgb(11, 15, 82),rgb(8, 3, 37));
+    color: #ffffff;
+    text-align: center;
+    overflow: hidden;
+    .gxjs-title{
+        margin: 90px auto 45px;
+        font-size: 46px;
+        font-weight: normal;
+    }
+    .gxjs-subtitle{
+        font-weight: normal;
+        font-size: 22px;
+        margin-bottom: 50px;
+    }
+    .gxjs-cont{
+        background: url("../imgs/tab_bg.jpg") center;
+        height: 500px;
+        width: 100%;
+        margin-bottom: 40px;
+        .wrap{
+            display: flex;
+            justify-content: center;
+            padding: 50px 0;
+            .gxjs-box{
+                width: 33%;
+                height: 400px;
+                border-radius: 20px;
+                background: rgba(46,56,223,.4);
+                margin-right: 0.5%;
+                transition: all .5s ease;
+                &:last-child{
+                    margin-right: 0;
+                }
+                .gxjs-name{
+                    margin-top: 95px;
+                    margin-bottom: 20px;
+                    font-size: 28px;
+                    transition: all .4s ease-in-out;
+                }
+                .gxjs-desc{
+                    font-size: 18px;
+                    margin-bottom: 20px;
+                    opacity: 1;
+                    visibility: visible;
+                    transition: all .4s ease-in-out;
+                }
+                .gxjs-logo{
+                    width: 152px;
+                    height: 90px;
+                    margin: 0 auto;
+                    transition: all .4s ease-in-out;
+                }
+                .gxjs-xyy{
+                    background: url("../imgs/spr_tab.png");
+                    background-position: 257px -85px;
+                }
+                .gxjs-wxy{
+                    background: url("../imgs/spr_tab.png");
+                    background-position: -167px -161px;
+                }
+                .gxjs-xll{
+                    background: url("../imgs/spr_tab.png");
+                    background-position: 257px 12px;
+                }
+                .gxjs-btn{
+                    height: 48px;
+                    width: 167px;
+                    margin: 0 auto;
+                    border: 1px solid #ffffff;
+                    border-radius: 24px;
+                    transition: all .4s ease-in-out,background .2s;
+                    margin-top: 45px;
+                    opacity: 0;
+                    visibility: hidden;
+                    &:hover{
+                        background: rgba(255,255,255,.25);
+                    }
+                    a{
+                        color: #ffffff;
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        line-height: 48px;
+                        font-size: 16px;
+                    }
+                }
+                &:hover{
+                    background: rgba(49,59,232,.7);
+                    .gxjs-name{
+                        transform: translateY(-25px);
+                    }
+                    .gxjs-desc{
+                        transform: translateY(-25px);
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+                    .gxjs-logo{
+                        transform: translateY(-70px);
+                    }
+                    .gxjs-btn{
+                        transform: translateY(-70px);
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* footer */
+#footer{
+    background: #000000;
+    color: #ffffff;
+    .footer-top{
+        padding: 45px 0 30px;
+        border-bottom: 1px solid rgba(255, 255, 255, .5);
+        display: flex;
+        ul{
+            flex: 1;
+            display: flex;
+            li{
+                margin-right: 35px;
+                a{
+                    color: #ffffff;
+                    font-size: 14px;
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+        .footer-top-right{
+            display: flex;
+            p{
+                font-size: 22px;
+                color: rgba(255, 255, 255, .5);
+                &:hover{
+                    color: #ffffff;
+                }
+            }
+            .weixin-code{
+                margin-left: 30px;
+                position: relative;
+                img{
+                    position: absolute;
+                    width: 108px;
+                    height: 110px;
+                    right: -43px;
+                    top: 18px;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: all .3s;
+                }
+                &:hover{
+                    p{
+                        color: #ffffff;
+                    }
+                    img{
+                        top: 25px;
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+            }
+        }
+    }
+    .footer-bottom{
+        color: rgba(255, 255, 255, .5);
+        margin-top: 35px;
+        font-size: 12px;
+        padding-bottom: 60px;
+        p{
+            height: 21px;
+            line-height: 21px;
+            a{
+                color: rgba(255, 255, 255, .5);
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+        ul{
+            display: flex;
+            margin-top: 30px;
+            li{
+                padding: 0 60px;
+                border-left: 1px solid #333333;
+                text-align: center;
+                white-space: nowrap;
+                &:first-child{
+                    padding-left: 0;
+                    border-left: none;
+                }
+                &:last-child{
+                    a{
+                        display: block;
+                        width: 150px;
+                        text-align: center;
+                    }
+                }
+                a{
+                    color: #787878;
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                    img{
+                        float: left;
+                        width: 40px;
+                        height: 38px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* 回到顶部和意见反馈的浮动按钮 */
+#gotop{
+    z-index: 99;
+    position: fixed;
+    bottom: 30px;
+    right: 50px;
+    color: #ffffff;
+    div{
+        opacity: .6;
+        background-color: #333333;
+        width: 54px;
+        border-radius: 4px;
+        text-align: center;
+        cursor: pointer;
+        user-select: none;
+        transition: opacity 0.3s;
+        &:hover{
+            opacity: 1;
+        }
+        p{
+            font-size: 14px;
+        }
+    }
+    .gotop-btn{
+        height: 54px;
+        line-height: 54px;
+        transform: rotateX(180deg);
+        p{
+            font-size: 30px;
+        }
+    }
+    .suggest-btn{
+        padding-top: 7px;
+        height: 47px;
+        margin-top: 18px;
+    }
+    .btn-hidden{
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@-webkit-keyframes goDownGif{
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(6px);
+    }
+}
+@-moz-keyframes goDownGif{
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(6px);
+    }
+}
+@-o-keyframes goDownGif{
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(6px);
+    }
+}
+@keyframes goDownGif{
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(6px);
+    }
+}
