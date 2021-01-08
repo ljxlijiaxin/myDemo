@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>米课MiCourse-选课利器</title>
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./css/swiper-3.4.2.min.css">
+    <link rel="stylesheet" href="./css/iconfont/iconfont.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <!-- header -->
+    <div id="header">
+        <div class="wrap">
+            <div class="header-logo"></div>
+            <div class="header-search">
+                <input type="text" placeholder="查找课程...">
+                <p class="iconfont icon-sousuo"></p>
+            </div>
+            <div class="header-nav clear">
+                <ul>
+                    <li><a href="#" class="nav-current">首页</a></li>
+                    <li><a href="#">课程</a></li>
+                    <li><a href="#">公告</a></li>
+                    <li><a href="#">登录</a></li>
+                </ul>
+                <p class="iconfont icon-gengduo"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- login -->
+    <div id="login">
+        <div class="wrap">
+            <div class="login-logo">
+                <img src="./images/MiLogo.png" alt="" srcset=""><br>
+                <img src="./images/miTitle.png" alt="" srcset="">
+            </div>
+            <div class="login-form">
+                <ul>
+                    <li class="login-tap"><a href="#" class="nav-current">登录米课</a></li>
+                    <li class="reg-tap"><a href="#">注册&middot;加入米课</a></li>
+                </ul>
+                <div class="login-box">
+                    <form action="" method="POST">
+                        <input type="email" name="loginEmail" id="loginEmail" placeholder="邮箱" class="search"><br>
+                        <input type="password" name="loginPwd" id="loginPwd" placeholder="密码" class="search"><br>
+                        <input type="checkbox" name="remember" id="remember" checked>
+                        <label for="remember">记住我</label>
+                        <a href="#">忘记密码</a><br>
+                        <input type="submit" value="登录" class="login-btn">
+                    </form>
+                </div>
+                <div class="reg-box hidden">
+                    <form action="" method="POST">
+                        <input type="email" name="regEmail" id="regEmail" placeholder="邮箱" class="search"><br>
+                        <input type="password" name="regPwd" id="regPwd" placeholder="密码" class="search"><br>
+                        <input type="password" name="regCheckPwd" id="regCheckPwd" placeholder="确认密码" class="search"><br>
+                        <input type="checkbox" name="remember" id="remember" checked>
+                        <label for="remember">记住我</label>
+                        <a href="#">忘记密码</a><br>
+                        <input type="submit" value="注册并登录" class="login-btn">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 内容主体 -->
+    <div id="content">
+        <div class="wrap">
+            <!-- 新课速递 -->
+            <div class="new-class">
+                <h3 class="title">新课速递</h3>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="new-class-box">
+                                <div>
+                                    <a href="#">
+                                        <img src="./images/film.jpg" alt="" srcset="">
+                                        <p>感受文学与电影交融之魅力</p>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="#">
+                                        <img src="./images/mineral.jpg" alt="" srcset="">
+                                        <p>感受文学与电影交融之魅力</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="new-class-box">
+                                <div>
+                                    <a href="#">
+                                        <img src="./images/biology.jpg" alt="" srcset="">
+                                        <p>感受文学与电影交融之魅力</p>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="#">
+                                        <img src="./images/pollution.jpg" alt="" srcset="">
+                                        <p>感受文学与电影交融之魅力</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="new-class-box">
+                                <div>
+                                    <a href="#">
+                                        <img src="./images/uncertainty.jpg" alt="" srcset="">
+                                        <p>感受文学与电影交融之魅力</p>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="#">
+                                        <img src="./images/usa.jpg" alt="" srcset="">
+                                        <p>感受文学与电影交融之魅力</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 分页器 -->
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+            <!-- 最热门课程榜 -->
+            <div class="hot-class">
+                <h3 class="title">最热门课程榜<a href="#">更多&raquo;</a></h3>
+                <div class="hot-class-box">
+                    <div>
+                        <img src="./images/jd.png" alt="" class="hot-class-logo">
+                        <a href="" class="hot-class-title">俄罗斯文学经典的当代意义</a>
+                        <div class="hot-class-tag">
+                            <a href="#" class="tag-link">文学院</a>
+                            <a href="#" class="tag-link">董晓</a>
+                        </div>
+                        <div class="score">
+                            <div class="blank-star">
+                                <i class="iconfont icon-tubiaozhizuomoban"></i><!--
+                                --><i class="iconfont icon-tubiaozhizuomoban"></i><!--
+                                --><i class="iconfont icon-tubiaozhizuomoban"></i><!--
+                                --><i class="iconfont icon-tubiaozhizuomoban"></i><!--
+                                --><i class="iconfont icon-tubiaozhizuomoban"></i>
+                                <div class="full-star">
+                                    <i class="iconfont icon-hexagon"></i><!--
+                                    --><i class="iconfont icon-hexagon"></i><!--
+                                    --><i class="iconfont icon-hexagon"></i><!--
+                                    --><i class="iconfont icon-hexagon"></i><!--
+                                    --><i class="iconfont icon-hexagon"></i>
+                                </div>
+                            </div>
+                            <span>4.7分</span>
+                        </div>
+                        <p class="comment">3学分<a href="#">68评论</a></p>
+                    </div>
+                    <div>
+                        <img src="./images/jd.png" alt="" class="hot-class-logo">
+                        <a href="" class="hot-class-title">俄罗斯文学经典的当代意义</a>
+                        <div class="hot-class-tag">
+                            <a href="#" class="tag-link">文学院</a>
+                            <a href="#" class="tag-link">董晓</a>
+                        </div>
+                        <div class="score">
+                            <div class="blank-star">
+                                <i class="iconfont icon-tubiaozhizuomoban"></i><!--
+                                --><i class="iconfont icon-tubiaozhizuomoban"></i><!--
+                                --><i class="iconfont icon-tubiaozhizuomoban"></i><!--
+                                --><i class="iconfont icon-tubiaozhizuomoban"></i><!--
+                                --><i class="iconfont icon-tubiaozhizuomoban"></i>
+                                <div class="full-star">
+                                    <i class="iconfont icon-hexagon"></i><!--
+                                    --><i class="iconfont icon-hexagon"></i><!--
+                                    --><i class="iconfont icon-hexagon"></i><!--
+                                    --><i class="iconfont icon-hexagon"></i><!--
+                                    --><i class="iconfont icon-hexagon"></i>
+                                </div>
+                            </div>
+                            <span>4.7分</span>
+                        </div>
+                        <p class="comment">3学分<a href="#">68评论</a></p>
+                    </div>
+                    <div>
+                        <img src="./images/jd.png" alt="" class="hot-class-logo">
+                        <a href="" class="hot-class-title">俄罗斯文学经典的当代意义</a>
+                        <div class="hot-class-tag">
+                            <a href="#" class="tag-link">文学院</a>
+                            <a href="#" class="tag-link">董晓</a>
+                        </div>
+                        <div class="score">
+                            <div class="blank-star">
+                                <i class="iconfont icon-tubiaozhizuomoban"></i><!--
+                                --><i class="iconfont icon-tubiaozhizuomoban"></i><!--
+                                --><i class="iconfont icon-tubiaozhizuomoban"></i><!--
+                                --><i class="iconfont icon-tubiaozhizuomoban"></i><!--
+                                --><i class="iconfont icon-tubiaozhizuomoban"></i>
+                                <div class="full-star">
+                                    <i class="iconfont icon-hexagon"></i><!--
+                                    --><i class="iconfont icon-hexagon"></i><!--
+                                    --><i class="iconfont icon-hexagon"></i><!--
+                                    --><i class="iconfont icon-hexagon"></i><!--
+                                    --><i class="iconfont icon-hexagon"></i>
+                                </div>
+                            </div>
+                            <span>4.7分</span>
+                        </div>
+                        <p class="comment">3学分<a href="#">68评论</a></p>
+                    </div>
+                    <div>
+                        <img src="./images/jd.png" alt="" class="hot-class-logo">
+                        <a href="" class="hot-class-title">俄罗斯文学经典的当代意义</a>
+                        <div class="hot-class-tag">
+                            <a href="#" class="tag-link">文学院</a>
+                            <a href="#" class="tag-link">董晓</a>
+                        </div>
+                        <div class="score">
+                            <div class="blank-star">
+                                <i class="iconfont icon-tubiaozhizuomoban"></i><!--
+                                --><i class="iconfont icon-tubiaozhizuomoban"></i><!--
+                                --><i class="iconfont icon-tubiaozhizuomoban"></i><!--
+                                --><i class="iconfont icon-tubiaozhizuomoban"></i><!--
+                                --><i class="iconfont icon-tubiaozhizuomoban"></i>
+                                <div class="full-star">
+                                    <i class="iconfont icon-hexagon"></i><!--
+                                    --><i class="iconfont icon-hexagon"></i><!--
+                                    --><i class="iconfont icon-hexagon"></i><!--
+                                    --><i class="iconfont icon-hexagon"></i><!--
+                                    --><i class="iconfont icon-hexagon"></i>
+                                </div>
+                            </div>
+                            <span>4.7分</span>
+                        </div>
+                        <p class="comment">3学分<a href="#">68评论</a></p>
+                    </div>
+                    <div>
+                        <img src="./images/jd.png" alt="" class="hot-class-logo">
+                        <a href="" class="hot-class-title">俄罗斯文学经典的当代意义</a>
+                        <div class="hot-class-tag">
+                            <a href="#" class="tag-link">文学院</a>
+                            <a href="#" class="tag-link">董晓</a>
+                        </div>
+                        <div class="score">
+                            <div class="blank-star">
+                                <i class="iconfont icon-tubiaozhizuomoban"></i><!--
+                                --><i class="iconfont icon-tubiaozhizuomoban"></i><!--
+                                --><i class="iconfont icon-tubiaozhizuomoban"></i><!--
+                                --><i class="iconfont icon-tubiaozhizuomoban"></i><!--
+                                --><i class="iconfont icon-tubiaozhizuomoban"></i>
+                                <div class="full-star">
+                                    <i class="iconfont icon-hexagon"></i><!--
+                                    --><i class="iconfont icon-hexagon"></i><!--
+                                    --><i class="iconfont icon-hexagon"></i><!--
+                                    --><i class="iconfont icon-hexagon"></i><!--
+                                    --><i class="iconfont icon-hexagon"></i>
+                                </div>
+                            </div>
+                            <span>4.7分</span>
+                        </div>
+                        <p class="comment">3学分<a href="#">68评论</a></p>
+                    </div>
+                    <div>
+                        <img src="./images/jd.png" alt="" class="hot-class-logo">
+                        <a href="" class="hot-class-title">俄罗斯文学经典的当代意义</a>
+                        <div class="hot-class-tag">
+                            <a href="#" class="tag-link">文学院</a>
+                            <a href="#" class="tag-link">董晓</a>
+                        </div>
+                        <div class="score">
+                            <div class="blank-star">
+                                <i class="iconfont icon-tubiaozhizuomoban"></i><!--
+                                --><i class="iconfont icon-tubiaozhizuomoban"></i><!--
+                                --><i class="iconfont icon-tubiaozhizuomoban"></i><!--
+                                --><i class="iconfont icon-tubiaozhizuomoban"></i><!--
+                                --><i class="iconfont icon-tubiaozhizuomoban"></i>
+                                <div class="full-star">
+                                    <i class="iconfont icon-hexagon"></i><!--
+                                    --><i class="iconfont icon-hexagon"></i><!--
+                                    --><i class="iconfont icon-hexagon"></i><!--
+                                    --><i class="iconfont icon-hexagon"></i><!--
+                                    --><i class="iconfont icon-hexagon"></i>
+                                </div>
+                            </div>
+                            <span>4.7分</span>
+                        </div>
+                        <p class="comment">3学分<a href="#">68评论</a></p>
+                    </div>
+                </div>
+            </div>
+            <!-- 热门标签 -->
+            <div class="class-tag">
+                <h3 class="title">热门标签</h3>
+                <div class="class-tag-box">
+                    <div>
+                        <h5>学分</h5>
+                        <a href="#" class="tag-link">2学分</a>
+                        <a href="#" class="tag-link">3学分</a>
+                        <a href="#" class="tag-link">1学分</a>
+                    </div>
+                    <div>
+                        <h5>类型</h5>
+                        <a href="#" class="tag-link">研讨课</a>
+                        <a href="#" class="tag-link">通识课</a>
+                        <a href="#" class="tag-link">公选课</a>
+                        <a href="#" class="tag-link">阅读计划</a>
+                        <a href="#" class="tag-link">文化素质课</a>
+                        <a href="#" class="tag-link">优秀文化素质课</a>
+                        <a href="#" class="tag-link">就业创业课</a>
+                    </div>
+                    <div>
+                        <h5>院系</h5>
+                        <a href="#" class="tag-link">文学系</a>
+                        <a href="#" class="tag-link">历史学系</a>
+                        <a href="#" class="tag-link">创新创业学院</a>
+                        <a href="#" class="tag-link">哲学系</a>
+                        <a href="#" class="tag-link">信息关系学院</a>
+                        <a href="#" class="tag-link">环境学院</a>
+                        <a href="#" class="tag-link">法学院</a>
+                        <a href="#" class="tag-link">国际学院</a>
+                        <a href="#" class="tag-link">社会学院</a>
+                        <a href="#" class="tag-link">外国语学院</a>
+                    </div>
+                    <div>
+                        <h5>分类</h5>
+                        <a href="#" class="tag-link">其他</a>
+                        <a href="#" class="tag-link">计算机</a>
+                        <a href="#" class="tag-link">历史</a>
+                        <a href="#" class="tag-link">文学</a>
+                        <a href="#" class="tag-link">社会</a>
+                        <a href="#" class="tag-link">生物</a>
+                        <a href="#" class="tag-link">经济</a>
+                        <a href="#" class="tag-link">政治</a>
+                        <a href="#" class="tag-link">创新创业</a>
+                        <a href="#" class="tag-link">艺术</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/swiper-3.4.2.min.js"></script>
+    <script>
+        window.onload = function () {
+            /* 切换登录和注册模块 */
+            document.querySelector(".login-tap").addEventListener("click",function () {
+                document.querySelector(".login-tap a").classList.add("nav-current");
+                document.querySelector(".reg-tap a").classList.remove("nav-current");
+                document.querySelector(".login-box").classList.remove("hidden");
+                document.querySelector(".reg-box").classList.add("hidden");
+            });
+            document.querySelector(".reg-tap").addEventListener("click",function () {
+                document.querySelector(".login-tap a").classList.remove("nav-current");
+                document.querySelector(".reg-tap a").classList.add("nav-current");
+                document.querySelector(".login-box").classList.add("hidden");
+                document.querySelector(".reg-box").classList.remove("hidden");
+            });
+            /* 初始化主体部分的轮播图 */
+            var mySwiper = new Swiper('.swiper-container', {
+                autoplay: 3000,     //自动滑动
+                loop:true,
+                pagination: '.swiper-pagination',   // 分页器
+                paginationClickable: true,
+                autoplayDisableOnInteraction:false,     //在用户操作swiper后是否禁用autoplay
+                // 自定义分页器指示点,接受分页器变量、指示点索引和原有的指示点类名作为参数
+                paginationBulletRender: function (mySwiper, index, pagination) {
+                    return '<span class="' + pagination + ' myPage"></span>';
+                }
+            })
+        }
+    </script>
+</body>
+</html>
