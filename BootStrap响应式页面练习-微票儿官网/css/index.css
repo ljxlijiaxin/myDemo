@@ -1,0 +1,102 @@
+ul,li,p{
+    margin: 0;
+    padding: 0;
+}
+ul,li{
+    list-style: none;
+}
+
+.header-logo{
+    padding: 0 15px;
+    margin-right: 16px;
+    height: 70px;
+}
+.header-logo img{
+    height: 100%;
+}
+.header-search{
+    margin-right: 15px;
+}
+.banner{
+    padding: 40px 0;
+    background: url("../images/bannerbg.png") no-repeat;
+    background-size: cover;
+}
+.banner-left{
+    margin-bottom: 15px;
+}
+.banner-right{
+    padding: 20px 16px;
+    background: #ffffff;
+}
+.banner-right li{
+    margin-top: 10px;
+}
+.content-top{
+    margin-top: 30px;
+}
+.mycard{
+    margin-bottom: 30px;
+}
+.mytabs{
+    margin-bottom: 30px;
+}
+.content-top-link{
+    margin-top: 10px;
+}
+.content-bottom{
+    margin: 30px 0;
+}
+.content-bottom-left{
+    margin-bottom: 30px;
+}
+.content-bottom ul{
+    text-align: center;
+}
+.content-bottom-cards{
+    margin-top: 15px;
+}
+.mytips{
+    color: #666666;
+    margin: 3px 0;
+    font-size: 16px;
+}
+.content-bottom-right{
+    margin-bottom: 20px;
+}
+.content-bottom-right p{
+    text-align: center;
+
+}
+.footer-top-box{
+    margin-bottom: 15px;
+}
+.footer-logo{
+    margin-right: 5px;
+    height: 44px;
+}
+.footer-title{
+    font-size: 16px;
+    margin-bottom: 3px;
+}
+.small{
+    font-size: 14px;
+}
+.footer-bottom{
+    margin-bottom: 16px;
+}
+.show-code{
+    position: relative;
+}
+.code-img{
+    position: absolute;
+    top: -84px;
+    left: -17px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .2s;
+}
+.show-code:hover .code-img{
+    opacity: 1;
+    visibility: visible;
+}
