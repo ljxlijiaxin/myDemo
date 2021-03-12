@@ -1,0 +1,7 @@
+<!--pages/typeList/typeList.wxml-->
+<!-- 产品类型分类列表页 -->
+<import src="../../templates/foodList.wxml"></import>
+
+<view wx:for="{{listData}}" wx:key="index" bindtap="goDetail" data-id="{{item.id}}">
+  <template is="foodList" data="{{...item}}"></template>
+</view>

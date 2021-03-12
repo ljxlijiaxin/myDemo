@@ -1,0 +1,24 @@
+<!--pages/eat/eat.wxml-->
+<!-- 食疗坊 -->
+<import src="../../templates/foodList.wxml"/>
+
+<!-- header -->
+<view class="header">
+  <view class="city"><navigator url="../selectCity/selectCity" hover-class="none">{{city}}</navigator></view>
+  <view class="search"><navigator url="../search/search" hover-class="none">请输入您想搜索的内容</navigator></view>
+</view>
+
+<!-- 产品类型选择 -->
+<view class="type">
+  <view wx:for="{{typeData}}" wx:key="index" class="typeItem" bindtap="goType" data-type="{{item.id}}">
+    <image src="{{item.imgUrl}}"></image>
+    <view>{{item.name}}</view>
+  </view>
+</view>
+
+<!-- 产品推荐列表 -->
+<view wx:for="{{list}}" wx:key="index" bindtap="goDetail" data-id="{{item.id}}">
+  <template is="foodList" data="{{...item}}"></template>
+</view>
+<view class="list-over" wx:if="{{noMore}}">没有更多数据了……</view>
+<view class="list-over" wx:if="{{list.length==0}}">暂无数据，敬请期待</view>

@@ -1,0 +1,10 @@
+<!--pages/search/search.wxml-->
+<!-- 搜索页 -->
+<import src="../../templates/foodList.wxml"/>
+
+<view class="search">
+  <input type="search" placeholder="请输入您想搜索的内容" focus="true" bindinput="goSearch"/>
+</view>
+<view wx:for="{{data}}" wx:key="index" bindtap="goDetail" data-id="{{item.id}}">
+  <template is="foodList" data="{{...item}}"></template>
+</view>

@@ -1,0 +1,13 @@
+<!--pages/selectCity/selectCity.wxml-->
+<!-- 城市选择页 -->
+
+<!-- 获取当前所在城市定位 -->
+<view class="title">当前所在的城市</view>
+<button class="location" size="mini" bindtap="getLocation">定位</button>
+
+<!-- 选择热门城市 -->
+<view class="title">热门城市</view>
+<button class="hot" size="mini" wx:for="{{hotCity}}" wx:key="index" bindtap="getHotCity" data-city="{{item}}">{{item}}</button>
+
+<!-- 底部地图 -->
+<map id="map" longitude="{{longitude}}" latitude="{{latitude}}"></map>
