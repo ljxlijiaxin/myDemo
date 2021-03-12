@@ -1,7 +1,0 @@
-/* pages/typeList/typeList.wxss */
-/* 产品类型分类列表页 */
-@import "../../templates/foodList.wxss";
-
-page{
-  background-color: #f1f1f1;
-}
