@@ -1,0 +1,32 @@
+<!--pages/productDetail/productDetail.wxml-->
+<!-- 商品详情页 -->
+
+<!-- 顶部banner轮播图展示商品图片 -->
+<swiper autoplay="true" interval="3000" circular="true" indicator-dots="true" class="banner">
+  <swiper-item wx:for="{{[1,2,3]}}" wx:key="index">
+    <image src="../../images/banner.jpg"></image>
+  </swiper-item>
+</swiper>
+
+<!-- 商品名称 -->
+<view class="name">{{productData.name}}</view>
+
+<!-- 商品评价 -->
+<view class="comment">暂无评价</view>
+
+<!-- 商品图文详情 -->
+<view class="info">
+  <view class="info-title">商品详情</view>
+  <image src="{{productData.pic}}"></image>
+  <view class="info-desc">{{productData.description}}</view>
+  <view class="info-desc">{{productData.details}}</view>
+</view>
+
+<!-- 底部加购物车按钮栏 -->
+<view class="shopcar">
+  <view class="shopcar-img">
+    <image src="../../images/购物车 (1).png" bindtap="goShopCar"></image>
+  </view>
+  <view class="add-car" bindtap="addShopCar">加入购物车</view>
+  <view class="go-buy" bindtap="goPay">立即购买</view>
+</view>
